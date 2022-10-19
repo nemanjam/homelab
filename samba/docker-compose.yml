@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  samba:
+    image: dperson/samba
+    container_name: samba
+    environment:
+      - TZ=/etc/timezone:/etc/timezone:ro
+      - USERID=$MY_UID
+      - GROUPID=$MY_GID
+      # env vars bellow must NOT have any quotes
+      - USER=sambauser;set-password-here
+      - SHARE=samba-share;/samba-share;yes;no;yes;sambauser;;;WORKGROUP
+      - WORKGROUP=WORKGROUP
+      - NMBD=true
+      - PERMISSIONS=true
+    networks:
+      - default
+    ports:
+      - "137:137/udp"
+      - "138:138/udp"
+      - "139:139/tcp"
+      - "445:445/tcp"
+    read_only: false
+    tmpfs:
+      - /tmp
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - /home/username/samba-share/:/samba-share:z
+    # s option - SHARE env var
+    # u option - USER env var
+    # this runs samba.sh with options
+    # command: '-s "SambaShare;/samba-share;yes;no;no;sambauser" -u "sambauser;1" -p'
+
+networks:
+  default:
