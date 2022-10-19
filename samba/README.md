@@ -16,3 +16,27 @@
 - https://stackoverflow.com/questions/13669585/how-to-get-a-list-of-all-valid-ip-addresses-in-a-local-network
 - https://www.dnsstuff.com/scan-network-for-device-ip-address
 
+```bash
+# nmap
+sudo apt-get install nmap
+
+nmap -sn 192.168.1.0/24
+
+# ifconfig
+arp -a
+```
+
+### Test LAN speed between 2 hosts
+
+- https://phoenixnap.com/kb/linux-network-speed-test
+
+```bash
+sudo apt install iperf
+
+# run server on port 5001
+iperf -s
+
+# run client
+iperf -c 192.168.56.101
+```
+
