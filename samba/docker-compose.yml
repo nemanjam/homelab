@@ -32,7 +32,7 @@ services:
     # s option - SHARE env var
     # u option - USER env var
     # this runs samba.sh with options
-    # command: '-s "SambaShare;/samba-share;yes;no;no;sambauser" -u "sambauser;1" -p'
+    # command: '-s "SambaShare;/samba-share;yes;no;no;sambauser" -u "sambauser;pass" -p'
 
 networks:
   default:
