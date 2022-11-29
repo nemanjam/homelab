@@ -8,12 +8,16 @@ services:
       - TZ=/etc/timezone:/etc/timezone:ro
       - USERID=$MY_UID
       - GROUPID=$MY_GID
-      # env vars bellow must NOT have any quotes
-      - USER=sambauser;set-password-here
-      - SHARE=samba-share;/samba-share;yes;no;yes;sambauser;;;WORKGROUP
+      # env vars bellow must not have any quotes
+      # public share
+      - SHARE=samba-share;/samba-share
+      # private share
+      # - USER=sambauser;password
+      # - SHARE=samba-share;/samba-share;yes;no;yes;sambauser;;;WORKGROUP
       - WORKGROUP=WORKGROUP
       - NMBD=true
       - PERMISSIONS=true
+      - GLOBAL=socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
     networks:
       - default
     ports:
@@ -32,7 +36,7 @@ services:
     # s option - SHARE env var
     # u option - USER env var
     # this runs samba.sh with options
-    # command: '-s "SambaShare;/samba-share;yes;no;no;sambauser" -u "sambauser;pass" -p'
+    # command: '-s "SambaShare;/samba-share;yes;no;no;sambauser" -u "sambauser;password" -p'
 
 networks:
   default:
