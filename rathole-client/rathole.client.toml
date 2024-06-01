@@ -1,0 +1,10 @@
+[client]
+remote_addr = "<ip-of-vps>:2333"
+[client.transport]
+type = "noise"
+[client.transport.noise]
+remote_public_key = "<public_key>"
+
+[client.services.blog]
+token = "secret_token"
+local_addr = "blog:8080"  # address for the service you want to expose

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  rathole:
+    image: rapiz1/rathole
+    command: --client /config/client.toml
+    restart: unless-stopped
+    volumes:
+      - ./rathole.client.toml:/config/client.toml:ro
+
+  blog:  # this is the local server on port 8080, local traefik here

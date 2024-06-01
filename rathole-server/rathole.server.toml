@@ -1,0 +1,11 @@
+[server]
+bind_addr = "0.0.0.0:2333"  # port to run rathole on.
+
+[server.services.blog]
+token = "secret_token"  # change to any secret string.
+bind_addr = "0.0.0.0:8080"  # port to expose the local service on vps.
+
+[server.transport]
+type = "noise"
+[server.transport.noise]
+local_private_key = "<private_key>"  # private key from the command above.

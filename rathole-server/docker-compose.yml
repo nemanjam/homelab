@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  rathole:
+    image: rapiz1/rathole
+    command: --server /config/rathole.server.toml
+    restart: unless-stopped
+    ports:
+      - 2333:2333
+      - 8080:8080
+    volumes:
+      - ./rathole.server.toml:/config/server.toml:ro
