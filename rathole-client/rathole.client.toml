@@ -5,6 +5,11 @@ type = "noise"
 [client.transport.noise]
 remote_public_key = "<public_key>"
 
-[client.services.blog]
+[client.services.traefik-http]
 token = "secret_token"
-local_addr = "blog:8080"  # address for the service you want to expose
+local_addr = "traefik:5080"  # address for the service you want to expose
+
+[client.services.traefik-https] # not a docker-compose.yml service, just name of tunnel
+token = "secret_token"
+local_addr = "traefik:5443" # this is name of d-c.yml service
+
