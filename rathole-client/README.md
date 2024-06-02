@@ -8,3 +8,9 @@
 
 - traefik on vps or local, matter of tunneling http or https
 - git submodules for traefik-proxy repo
+
+- generate keys for noise protocol
+
+```bash
+docker run -it --rm rapiz1/rathole:v0.5.0 --genkey
+```
