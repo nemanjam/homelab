@@ -16,4 +16,8 @@ docker run -it --rm rapiz1/rathole:v0.5.0 --genkey
 # generate base64 secret
 openssl rand -base64 32
 
+
+# scp client config
+scp ./rathole-client/rathole.client.toml username@192.168.1.120:~/homelab/rathole-client/rathole.client.toml
+
 ```
