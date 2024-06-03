@@ -18,6 +18,6 @@ openssl rand -base64 32
 
 
 # scp client config
-scp -r ./rathole-client-test username@192.168.1.120:~/homelab/rathole-client-test
+scp ./rathole-client/rathole.client.toml username@192.168.1.120:~/homelab/traefik-proxy/core/rathole.client.toml
 
 ```
