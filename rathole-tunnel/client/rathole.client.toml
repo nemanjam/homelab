@@ -9,5 +9,5 @@ remote_addr = "152.70.160.21:2333"
 
 [client.services.nginx]
 token = "my-secret"
-local_addr = "nginx-with-volume:5080"  
+local_addr = "nginx-with-volume:8080"  
 

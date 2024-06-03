@@ -7,8 +7,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./rathole.client.toml:/config/rathole.client.toml:ro
-    ports:
-      - '8080:5080'
+    # ports:
+    #   - '8080:5080'
     networks:
       - proxy
 
