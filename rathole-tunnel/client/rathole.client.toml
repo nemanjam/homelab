@@ -1,11 +1,11 @@
 [client]
 remote_addr = "152.70.160.21:2333"
 
-# [client.transport]
-# type = "noise"
+[client.transport]
+type = "noise"
 
-# [client.transport.noise]
-# remote_public_key = "..."
+[client.transport.noise]
+remote_public_key = "public_key"
 
 [client.services.nginx]
 token = "my-secret"
