@@ -11,3 +11,9 @@ services:
       # host:container
     volumes:
       - ./rathole.server.toml:/config/rathole.server.toml:ro
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
