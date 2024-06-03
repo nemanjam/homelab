@@ -1,4 +1,6 @@
-# Rathole client
+# Rathole tunnel
+
+- single http tunnel example, sufficient, for https just another tunnel and ports
 
 - https://nitinja.in/tech/
 

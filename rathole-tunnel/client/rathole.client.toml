@@ -1,5 +1,5 @@
 [client]
-remote_addr = "152.70.160.21:2333"
+remote_addr = "152.70.160.21:2333" # on client ONLY this port is required
 
 [client.transport]
 type = "noise"
@@ -8,6 +8,9 @@ type = "noise"
 remote_public_key = "public_key"
 
 [client.services.nginx]
-token = "my-secret"
-local_addr = "nginx-with-volume:8080"  
+token = "secret_token"
+local_addr = "nginx-with-volume:8080" # expose here directly on app port, without any mapping in docker-compose.yml
+
+# this is incorrect
+# local_addr = "nginx-with-volume:5080" 
 
